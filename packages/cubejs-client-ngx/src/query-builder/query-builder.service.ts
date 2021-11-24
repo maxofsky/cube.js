@@ -67,7 +67,7 @@ export class QueryBuilderService {
           switchMap((data) => {
             return combineLatest([
               this._cubejs.dryRun(data.query).pipe(catchError((error) => {
-                console.error(error);
+                // console.error(error);
                 return of(null);
               })),
               of(data.shouldApplyHeuristicOrder),
