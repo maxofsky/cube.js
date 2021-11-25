@@ -1099,7 +1099,7 @@ export class ApiGateway {
         error: e.error,
         duration: this.duration(requestStarted)
       }, context);
-      res(e, { status: 400 });
+      res(e, { status: 200 });
     } else if (e.type === 'UserError') {
       this.log({
         type: e.type,
@@ -1112,7 +1112,7 @@ export class ApiGateway {
           type: e.type,
           error: e.message
         },
-        { status: 400 }
+        { status: 200 }
       );
     } else {
       this.log({
